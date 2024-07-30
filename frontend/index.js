@@ -14,9 +14,20 @@ function moduleProject1() {
   //  ✨ add your code here
   console.log(quotes)
   const quoteOfTheDay = document.querySelector('.quoteoftheday')
-  quoteOfTheDay.appendChild(newParagraph)
-  console.log(quoteOfTheDay)
+  const div = document.createElement('div')
 
+
+  console.log(quoteOfTheDay)
+  let addQuotes = () => {
+    let num = Math.floor(Math.random() * 10)
+    const quote = document.createElement('div')
+    const authorAndDate = document.createElement('div')
+    quote.textContent = quotes[num].quote
+    authorAndDate.textContent = `${quotes[num].author} in ${quotes[num].date}`
+    quoteOfTheDay.append(quote)
+    quoteOfTheDay.append(authorAndDate)
+  }
+  addQuotes()
   // 👉 TASK 3 - Build a "Corporate Speak" widget
   //  ✨ add your code here
 
